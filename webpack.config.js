@@ -1,11 +1,21 @@
+var webpack = require('webpack');
+
 module.exports = {
-	devtool: 'inline-source-map'
-	entry: ['./client/client.js'],
+	devtool: 'inline-source-map',
+	entry: [
+		'webpack-hot-middleware/client',
+		'./client/client.js'
+	],
 	output: {
-		path: './dist',
+		path: require("path").resolve('./dist'),
 		filename: 'bundle.js',
 		publicPath: '/'
 	},
+	plugins: [   
+		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin()
+	],
 	module: {
 		// where you define certain tasks you wanna do
 		// like compile es6、jsx thing
@@ -16,7 +26,7 @@ module.exports = {
 				loader: 'babel-loader', 
 				exclue: /node_modules/,
 				query:{  
-					presets: ['react','es2015']
+					presets: ['react','es2015','react-hmre']
 				} 
 			}
 		]
