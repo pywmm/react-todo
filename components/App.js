@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import TextInput from './TextInput'
 /*class App extends Component {
 
 	render() {
@@ -9,8 +9,14 @@ import React, { Component } from 'react'
 
 var App = React.createClass({
 
+	
 	render() {
-		return <div>This is definitely a React app now!</div>
+		return (
+			<div>
+				<h1>This is App Component!</h1>
+				<TextInput />
+			</div>
+		)
 	}
 })
 
