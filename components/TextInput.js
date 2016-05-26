@@ -11,7 +11,7 @@ class TextInput extends Component {
 	constructor (props, context) {
 		super(props, context)
 		this.state = {
-			inputText: 'initial text ...'
+			inputText: 'initial text'
 		}
 	}
 
