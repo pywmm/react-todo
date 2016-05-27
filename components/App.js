@@ -1,25 +1,23 @@
 import React, { Component } from 'react'
-import TextInput from './TextInput'
-/*class App extends Component {
+import TodoInput from './TodoInput'
+import TodoList from './TodoList'
 
-	render() {
-		return <div>This is definitely a React app now!</div>
-	}
-}*/
 
-var App = React.createClass({
 
-	
+// configruation and create our store
+// var store= createStore(reducer,initialState) //[]
+
+
+class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>This is App Component!</h1>
-				<TextInput />
+				<h1>Todo List</h1>
+				<TodoInput />
+				<TodoList /> 
 			</div>
 		)
 	}
-})
-
-
+}
 
 export default App
