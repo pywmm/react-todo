@@ -8,8 +8,8 @@ export default function reducer(state, action) {
 	switch (action.type) {
 		case 'ADD_TODO':
 			return Object.assign({}, state, {
-				todo: [{
-					text: action.text
+				todos: [{
+					text: action.text,
 					completed: false,
 					id: getId(state)
 				}, ...state.todos]
